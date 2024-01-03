@@ -1,0 +1,6 @@
+import 'package:equatable/equatable.dart';import 'package:flutter/material.dart';import '/core/app_export.dart';import '../models/previewcard_item_model.dart';import 'package:sanjay_s_application2/presentation/preview_card_screen/models/preview_card_model.dart';part 'preview_card_event.dart';part 'preview_card_state.dart';/// A bloc that manages the state of a PreviewCard according to the event that is dispatched to it.
+class PreviewCardBloc extends Bloc<PreviewCardEvent, PreviewCardState> {PreviewCardBloc(PreviewCardState initialState) : super(initialState) { on<PreviewCardInitialEvent>(_onInitialize); }
+
+_onInitialize(PreviewCardInitialEvent event, Emitter<PreviewCardState> emit, ) async  { emit(state.copyWith(previewCardModelObj: state.previewCardModelObj?.copyWith(previewcardItemList: fillPreviewcardItemList()))); } 
+List<PreviewcardItemModel> fillPreviewcardItemList() { return [PreviewcardItemModel(rectangle: ImageConstant.imgRectangle42581), PreviewcardItemModel(rectangle: ImageConstant.imgRectangle4259452x334), PreviewcardItemModel(rectangle: ImageConstant.imgRectangle4260452x334), PreviewcardItemModel(rectangle: ImageConstant.imgRectangle4261452x334), PreviewcardItemModel(rectangle: ImageConstant.imgRectangle4262452x334)]; } 
+ }
